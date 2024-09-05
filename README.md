@@ -1,2 +1,2 @@
 # Matrix
-A simple introductory repository for python to implement matrix operations.
+A simple introductory repository in python to implement matrix operations.
