@@ -4,6 +4,15 @@ from matrix import Matrix
 
 # write your test cases here
 class TestMatrix(unittest.TestCase):
+
+  def test_print(self):
+    m1 = Matrix([
+      [1,2,3],
+      [4,5,6],
+    ])
+    expected_str_matrix = "[1, 2, 3]\n[4, 5, 6]\n"
+    self.assertEqual(str(m1),expected_str_matrix)
+
   def test_shape(self):
     m1 = Matrix([
       [1,2,3],
