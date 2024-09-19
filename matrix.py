@@ -13,3 +13,14 @@ class Matrix:
       M.append([])
       for j in range(cols):
           M[i].append(0)
+
+  # creating an identity matrix of any size
+
+  Id = []
+  rowsId = int(input('enter the dimension of the identity matrix: '))
+  for i in range(rowsId):
+      Id.append([])
+      for j in range(rowsId):
+          Id[i].append(0)
+          if i == j:
+              Id[i][j] = 1
