@@ -5,22 +5,24 @@ class Matrix:
     self.data = data
   
   # making a matrix of 0's of any size
-
-  cols = int(input('enter the number of columns: '))
-  rows = int(input('enter the number of rows: '))
-  M = []
-  for i in range(rows):
-      M.append([])
-      for j in range(cols):
-          M[i].append(0)
+  def zeros(self,cols,rows):
+    self.cols = cols
+    self.rows = rows
+    M = []
+    for i in range(rows):
+        M.append([])
+        for j in range(cols):
+            M[i].append(0)
+    return(M)
 
   # creating an identity matrix of any size
-
-  Id = []
-  rowsId = int(input('enter the dimension of the identity matrix: '))
-  for i in range(rowsId):
-      Id.append([])
-      for j in range(rowsId):
-          Id[i].append(0)
-          if i == j:
-              Id[i][j] = 1
+  def identity(self,rowsId)
+    Id = []
+    self.rowsId = rowsId 
+    for i in range(rowsId):
+        Id.append([])
+        for j in range(rowsId):
+            Id[i].append(0)
+            if i == j:
+                Id[i][j] = 1
+    return(Id)
