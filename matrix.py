@@ -26,3 +26,18 @@ class Matrix:
             if i == j:
                 Id[i][j] = 1
     return(Id)
+
+  def transpose(self,A):
+    self.A = A
+    cols = len(self.A[0])
+    rows = len(self.A)
+    T = []
+    for i in range(cols):
+        T.append([])
+        for j in range(rows):
+            T[i].append(0)
+    for i in range(cols):
+        for j in range(rows):
+            T[i][j] = A[j][i]
+    return(T)
+
