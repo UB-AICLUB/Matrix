@@ -83,3 +83,17 @@ class Matrix:
                 result[i].append(0)
                 result[i][j] = self.A[i][j] + self.B[i][j]
         return(result)
+
+  # function for matrix subtraction
+  def subtraction(self,A,B):
+        self.A = A
+        self.B = B
+        result = []
+        rows = len(self.A)
+        cols = len(self.A[0])
+        for i in range(rows):
+            result.append([])
+            for j in range(cols):
+                result[i].append(0)
+                result[i][j] = self.A[i][j] - self.B[i][j]
+        return(result)
