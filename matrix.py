@@ -55,6 +55,7 @@ class Matrix:
                 Id[i][j] = 1
     return(Id)
 
+  # function for finding the transpose of a matrix
   def transpose(self,A):
     self.A = A
     cols = len(self.A[0])
@@ -68,3 +69,17 @@ class Matrix:
         for j in range(rows):
             T[i][j] = A[j][i]
     return(T)
+
+  # function for matrix addition
+  def addition(self,A,B):
+        self.A = A
+        self.B = B
+        result = []
+        rows = len(self.A)
+        cols = len(self.A[0])
+        for i in range(rows):
+            result.append([])
+            for j in range(cols):
+                result[i].append(0)
+                result[i][j] = self.A[i][j] + self.B[i][j]
+        return(result)
