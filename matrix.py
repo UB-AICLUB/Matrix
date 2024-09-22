@@ -68,3 +68,22 @@ class Matrix:
         for j in range(rows):
             T[i][j] = A[j][i]
     return(T)
+
+  def multiply(self,A,B):
+    mOutput = []
+    self.A = A
+    self.B = B
+    outCol = len(B[0])
+    outRow = len(A)
+    commonLen = len(A[0])
+    for i in range(outRow):
+        mOutput.append([])
+        for j in range(outCol):
+            mOutput[i].append(0)
+
+    for k in range(commonLen):
+        for i in range(outRow):
+            for j in range(outCol):
+                mOutput[i][j] += (A[i][k]*B[k][j])
+
+    return(mOutput)
