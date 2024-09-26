@@ -1,4 +1,5 @@
 from typing import List
+import numpy
 
 class Matrix:
   def __init__(self,data:List):
@@ -55,6 +56,7 @@ class Matrix:
                 Id[i][j] = 1
     return(Id)
 
+  # function for finding the transpose of a matrix
   def transpose(self,A):
     self.A = A
     cols = len(self.A[0])
@@ -68,3 +70,47 @@ class Matrix:
         for j in range(rows):
             T[i][j] = A[j][i]
     return(T)
+
+  # function for matrix addition
+  def addition(self,A,B):
+    self.A = A
+    self.B = B
+    result = []
+    rows = len(self.A)
+    cols = len(self.A[0])
+    for i in range(rows):
+        result.append([])
+         for j in range(cols):
+            result[i].append(0)
+            result[i][j] = self.A[i][j] + self.B[i][j]
+    return(result)
+
+  # function for matrix subtraction
+  def subtraction(self,A,B):
+    self.A = A
+    self.B = B
+    result = []
+    rows = len(self.A)
+    cols = len(self.A[0])
+    for i in range(rows):
+        result.append([])
+        for j in range(cols):
+            result[i].append(0)
+            result[i][j] = self.A[i][j] - self.B[i][j]
+    return(result)
+
+"""
+function for finding the shape of a matrix
+the tuple can have at most 3 elements
+"""
+def shape(self,M):
+  self.M = M
+  arr = numpy.array(self.M)
+  self.matrixShape = ()
+  self.shapeLen = arr.ndim
+  self.matrixShape = self.matrixShape + (len(self.M),)
+  if self.shapeLen > 1:
+      self.matrixShape = self.matrixShape + (len(self.M[0]),)
+  if self.shapeLen > 2:
+      self.matrixShape = self.matrixShape + (len(self.M[0][0]),)
+  return(self.matrixShape)
